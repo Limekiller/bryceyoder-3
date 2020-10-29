@@ -167,6 +167,7 @@ export class WorkComponentController extends Component {
                                 <motion.img
                                     variants={imageVariants}
                                     key={image}
+                                    alt={'Project image ' + i}
                                     src={'/work/' + 
                                         this.state.activeCat + '/' +
                                         this.state.activeTitle + '/' +

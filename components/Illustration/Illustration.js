@@ -51,6 +51,7 @@ function Illustration(props) {
                     <motion.img 
                         src={'/images/illustrations/' + props.title + '/' + image + '.png'}
                         id={'illustration' + i}
+                        alt=''
                         className={`
                             ${props.images[image]['rotate'] ? styles.rotate : ''}
                             ${Math.random() > 0.5 ? styles.reverse : ''}
