@@ -121,7 +121,7 @@ export class WorkComponentController extends Component {
                             return (
                                 <motion.div 
                                     variants={buttonVariants}
-                                    key={i}
+                                    key={category.title}
                                 >
                                     <button
                                         onClick={(e) => this.handleClick(e)}
@@ -166,7 +166,7 @@ export class WorkComponentController extends Component {
                             {this.state.images.map((image, i) => ( 
                                 <motion.img
                                     variants={imageVariants}
-                                    key={i}
+                                    key={image}
                                     src={'/work/' + 
                                         this.state.activeCat + '/' +
                                         this.state.activeTitle + '/' +
@@ -184,7 +184,7 @@ export class WorkComponentController extends Component {
                                     animate={this.state.activeCat == category.title ? 'enter' : 'exit'}
                                     exit='exit'
                                     variants={categoryVariants}
-                                    key={i}
+                                    key={category.title}
                                 >
                                     <div 
                                         data-category={category.title}
