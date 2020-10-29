@@ -1,0 +1,17 @@
+<h1>TF2 Filter</h1>
+<p>
+    Use Google's Perspective API to filter hate speech in real-time from Team Fortress 2.
+    I did a small research project in which I collected comments from TF2 matches, ranked each comment manually based on its toxicity,
+    and ran each comment through Perspective to see at which threshhold the two ranking sets most closely matched; I then used this data to fine-tune
+    the program. Will disable the in-built chat on startup, and uses PyQt to simply run a window on top of your TF2 game, ensuring that VAC
+    doesn't think there's any cheating going on. Runs entirely in Python.
+</p>
+<h3>Features</h3>
+<ul>
+    <li>Easy to run: add a few launch args to your game and open the program</li>
+    <li>Outputs the in-game console to a log and monitors this file to determine gamestate</li>
+    <li>Uses <i>graph-theory</i> to determine team affiliations 
+    (all the log tells us is when someone enters a comment, and who kills who. But we can use this info to build a graph of team relationships)</li>
+</ul>
+<a href="https://github.com/Limekiller/tf2filter" class="button" target="_blank">Check it out on GitHub</a>
+<hr />

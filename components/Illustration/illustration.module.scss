@@ -1,0 +1,51 @@
+.illustration {
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    transform-origin: bottom left;
+    z-index: -1;
+
+    .background {
+        position:fixed;
+        background-image: url('/images/noise.jpg');
+        background-blend-mode: lighten;
+        width: 800px;
+        height: 800px;
+        bottom: -300px;
+        left: -100px;
+        border-radius: 500px;
+        transform-origin: bottom left;
+        opacity: 0.5;
+    }
+
+    img {
+        position: fixed;
+
+        &.rotate {
+            animation: rotate 30s infinite linear;
+
+            &.reverse {
+                animation: rotate 30s infinite reverse linear;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            transform: rotate(180deg) translateY(50px);
+        }
+    }
+
+    @media (max-width: 1000px) {
+        transform: scale(0.5) rotate(180deg);
+        top: 133px;
+        position: absolute;
+        left: unset;
+        bottom: unset;
+        right: -10px;
+    }
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg)}
+    to { transform: rotate(360deg);}
+}

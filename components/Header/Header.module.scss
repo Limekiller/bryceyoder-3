@@ -1,0 +1,53 @@
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    padding:20px 50px 20px 50px;
+    position: fixed;
+    z-index: 999;
+    max-width: 100vw;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+        height: 118px;
+    }
+
+    img {
+        height: 70px;
+        width: auto;
+        // filter: invert(1);
+
+        @media (max-width: 500px) {
+            width: 90px;
+            height: auto;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+    }
+
+    nav {
+        color:black;
+        font-size: 30px;
+        font-family: acumin-pro-extra-condensed, sans-serif;
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 75px;
+
+            &:after {
+                top: 35px;
+            }
+
+            @media (max-width: 500px) {
+                margin-left: 0px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            justify-content: space-between;
+        }
+    }
+}

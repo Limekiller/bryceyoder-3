@@ -1,0 +1,30 @@
+.StaticPage {
+    display:flex;
+
+    > div {
+        width: 50%;
+
+        @media (max-width: 1000px) {
+            width: 0px;
+        }
+    }
+    .text {
+        max-width: 800px;
+
+        @media (max-width: 1000px) {
+            width: 95%;
+        }
+    }
+
+    h1 {
+        margin-bottom: 50px;
+
+        @media (max-width: 1000px) {
+            margin-top: 350px;
+        }
+    }
+    .aboutTitle {
+        line-height: 95px;
+        margin-bottom: 50px;
+    }
+}
