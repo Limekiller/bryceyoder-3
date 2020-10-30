@@ -53,6 +53,7 @@ export class WorkComponentController extends Component {
                 this.state = {
                     active: 0,
                     activeCat: category.title,
+                    queuedCat: category.title,
 
                     activeTitle: category['works'][0]['title'],
                     queuedTitle: category['works'][0]['title'],
@@ -72,7 +73,7 @@ export class WorkComponentController extends Component {
         e.target.classList.add('active');
         this.setState({
             imagesActive: false,
-            activeCat: e.target.innerHTML
+            queuedCat: e.target.innerHTML
         })
     }
 
@@ -88,7 +89,8 @@ export class WorkComponentController extends Component {
 
     activateImages() {
         this.setState({
-            activeTitle: this.state.queuedTitle
+            activeTitle: this.state.queuedTitle,
+            activeCat: this.state.queuedCat
         })
         if (window.location.href.split('/')[3] == 'work') {
             this.setState({
@@ -182,7 +184,7 @@ export class WorkComponentController extends Component {
                             return (  
                                 <motion.div 
                                     initial='initial'
-                                    animate={this.state.activeCat == category.title ? 'enter' : 'exit'}
+                                    animate={this.state.queuedCat == category.title ? 'enter' : 'exit'}
                                     exit='exit'
                                     variants={categoryVariants}
                                     key={category.title}
