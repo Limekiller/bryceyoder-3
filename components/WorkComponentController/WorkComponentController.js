@@ -49,19 +49,15 @@ export class WorkComponentController extends Component {
         super(props);
         this.loadImages = this.loadImages.bind(this);
         this.props.totalWorks.map((category, i) => {
-            if (i == this.props.totalWorks.length-1) {
-                this.state = {
-                    active: 0,
-                    activeCat: category.title,
-                    queuedCat: category.title,
-
-                    activeTitle: category['works'][0]['title'],
-                    queuedTitle: category['works'][0]['title'],
-                    
-                    images: category['works'][0]['images'],
-                    imagesActive: false,
-                    showImagesMobile: false,
-                }
+            this.state = {
+                active: 0,
+                activeCat: category.title,
+                activeTitle: category['works'][0]['title'],
+                activeImages: 0,
+                
+                images: category['works'][0]['images'],
+                imagesActive: false,
+                showImagesMobile: false,
             }
         });
     }
@@ -73,26 +69,34 @@ export class WorkComponentController extends Component {
         e.target.classList.add('active');
         this.setState({
             imagesActive: false,
-            queuedCat: e.target.innerHTML
         })
-    }
-
-    loadImages(imageList, activeTitle) {
-        if (window.location.href.split('/')[3] == 'work') {
+        setTimeout(() => {
             this.setState({
-                queuedTitle: activeTitle,
-                images: imageList,
-                imagesActive: false
+                activeCat: e.target.innerHTML
             })
-        }
+        }, 500)
     }
 
-    activateImages() {
+    loadImages(imageList, title) {
+        console.log("ok")
+        if (this.state.active < 2) {
+            this.setState({ active: this.state.active += 1})
+            return
+        }
+        this.setState({ imagesActive: false, activeImages: 0 })
+        setTimeout(() => {
+            this.setState({
+                activeTitle: title,
+                images: imageList,
+            })
+        }, 500)
+    }
+
+    activateImage() {
         this.setState({
-            activeTitle: this.state.queuedTitle,
-            activeCat: this.state.queuedCat
+            activeImages: this.state.activeImages += 1
         })
-        if (window.location.href.split('/')[3] == 'work') {
+        if (this.state.activeImages == this.state.images.length) {
             this.setState({
                 imagesActive: true,
             })
@@ -163,7 +167,6 @@ export class WorkComponentController extends Component {
                                 exit: { transition: { staggerChildren: 0.1, transition: 0.5 }},
                                 enter: { transition: { staggerChildren: 0.1, transition: 0.5 }}
                             }}
-                            onAnimationComplete={() => this.activateImages()}
                         >
                             {this.state.images.map((image, i) => ( 
                                 <motion.img
@@ -175,6 +178,7 @@ export class WorkComponentController extends Component {
                                         this.state.activeTitle + '/' +
                                         'images/' + image
                                     } 
+                                    onLoad={() => this.activateImage()}
                                 />
                             ))}
                         </motion.div>
@@ -184,7 +188,7 @@ export class WorkComponentController extends Component {
                             return (  
                                 <motion.div 
                                     initial='initial'
-                                    animate={this.state.queuedCat == category.title ? 'enter' : 'exit'}
+                                    animate={this.state.activeCat == category.title ? 'enter' : 'exit'}
                                     exit='exit'
                                     variants={categoryVariants}
                                     key={category.title}
