@@ -11,7 +11,12 @@
 
     @media (max-width: 500px) {
         flex-direction: column;
-        height: 118px;
+        height: 130px;
+        transition: margin-top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &.scrolled {
+            margin-top: -75px;
+        }
     }
 
     img {
@@ -19,11 +24,29 @@
         width: auto;
         // filter: invert(1);
 
+        &.mobileLogo {
+            display: none;
+        }
+
         @media (max-width: 500px) {
             width: 90px;
             height: auto;
             margin: 0 auto;
             margin-bottom: 10px;
+
+            &.mobileLogo {
+                display: block;
+                position: absolute;
+                height: 40px;
+                width: auto;
+                top: 82px;
+                left: -35px;
+                transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+                &.scrolled {
+                    left: 15px;
+                }
+            }
         }
     }
 
@@ -48,6 +71,12 @@
 
         @media (max-width: 500px) {
             justify-content: space-between;
+            transition: margin 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+            &.scrolled {
+                margin-left: 65px;
+                margin-right: -25px;
+            }
         }
     }
 }

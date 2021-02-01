@@ -120,6 +120,12 @@ button:hover, button.active, .button:hover {
   button, .button {
     font-size: 15px;
   }
+  a {
+    &:not(.button):after {
+      height: 2px;
+      top: 22px;
+    }
+  }
 }
 
 @keyframes link-anim {
