@@ -13,7 +13,7 @@ function Header() {
     });
 
     const handleScroll = () => {
-        if (document.documentElement.scrollTop >= 200) {
+        if (document.documentElement.scrollTop >= 50) {
             setMobileState('scrolled')
         } else if (document.documentElement.scrollTop == 0) {
             setMobileState('top')

@@ -58,6 +58,7 @@ export class WorkComponentController extends Component {
                 images: category['works'][0]['images'],
                 imagesActive: false,
                 showImagesMobile: false,
+                timeout: null
             }
         });
     }
@@ -78,25 +79,33 @@ export class WorkComponentController extends Component {
     }
 
     loadImages(imageList, title) {
-        console.log("ok")
         if (this.state.active < 2) {
             this.setState({ active: this.state.active += 1})
             return
         }
+        
         this.setState({ imagesActive: false, activeImages: 0 })
-        setTimeout(() => {
-            this.setState({
-                activeTitle: title,
-                images: imageList,
-            })
-        }, 500)
+
+        if (this.state.timeout) {
+            clearTimeout(this.state.timeout)
+        }
+        this.setState({
+            timeout: setTimeout(() => {
+                this.setState({
+                    activeTitle: title,
+                    images: imageList,
+                    activeImages: 0,
+                    timeout: null
+                })
+            }, 500)
+        })
     }
 
     activateImage() {
         this.setState({
             activeImages: this.state.activeImages += 1
         })
-        if (this.state.activeImages == this.state.images.length) {
+        if (this.state.activeImages >= this.state.images.length) {
             this.setState({
                 imagesActive: true,
             })
@@ -162,7 +171,7 @@ export class WorkComponentController extends Component {
                         <motion.div 
                             initial='initial'
                             animate={this.state.imagesActive ? 'enter' : 'exit'}
-                            exit='exit'
+                            //exit='exit'
                             variants={{ 
                                 exit: { transition: { staggerChildren: 0.1, transition: 0.5 }},
                                 enter: { transition: { staggerChildren: 0.1, transition: 0.5 }}

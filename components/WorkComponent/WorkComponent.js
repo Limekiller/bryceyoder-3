@@ -41,7 +41,7 @@ export class WorkComponent extends Component {
                         this.handleIntersection(this.props.images, this.props.title)
                     }
                 }}
-                threshold={0.6}
+                threshold={0.7}
                 className={styles.body}
             >
                 <div className={`
