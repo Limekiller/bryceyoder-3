@@ -171,7 +171,7 @@ export class WorkComponentController extends Component {
                         <motion.div 
                             initial='initial'
                             animate={this.state.imagesActive ? 'enter' : 'exit'}
-                            //exit='exit'
+                            exit='exit'
                             variants={{ 
                                 exit: { transition: { staggerChildren: 0.1, transition: 0.5 }},
                                 enter: { transition: { staggerChildren: 0.1, transition: 0.5 }}
