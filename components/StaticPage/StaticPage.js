@@ -9,12 +9,12 @@ const contentVariants = {
     enter: {
         x:0, 
         opacity: 1, 
-        transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] }
+        transition: { duration: 0.4, ease: [0.25, 1, 0.5, 1] }
     },
     exit: {
         opacity: 0, 
         x: 15,
-        transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1]}
+        transition: { duration: 0.4, ease: [0.5, 0, 0.75, 0]}
     }
 }
 

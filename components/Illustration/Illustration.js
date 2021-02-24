@@ -43,7 +43,7 @@ function Illustration(props) {
             <motion.div 
                 className={styles.background} 
                 id='background'
-                variants={{ initial: {opacity:0, scale:0.5}, exit: {opacity:0, scale:0.5}, enter:{opacity:0.75, scale:1}}}
+                variants={{ initial: {opacity:0, scale:0.5}, exit: {opacity:0, scale:1}, enter:{opacity:0.75, scale:1}}}
             />
             <style jsx global>{` .${styles.background} { background-color: ${props.bgColor}; }`}</style>
             {Object.keys(props.images).map((image, i) => (

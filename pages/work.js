@@ -14,8 +14,6 @@ export default function Work(props) {
       <Head>
         <title>Bryce Yoder | Work</title>
       </Head>
-
-      <Header />
       <div class='pageContainer'>
           <WorkComponentController
             totalWorks={props.totalWorks}

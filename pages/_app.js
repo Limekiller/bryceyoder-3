@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Head from 'next/head'
+import Header from '@/components/Header/Header.js'
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -37,9 +38,15 @@ function MyApp({ Component, pageProps, router }) {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
     </Head>
-    <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} key={router.route} />
-    </AnimatePresence>
+    <Header />
+    <motion.div
+      animate={{opacity: [0, 1]}}
+      transition={{ delay: 0.25, duration: 0.25}}
+    >
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
+    </motion.div>
     </>
   )
 }

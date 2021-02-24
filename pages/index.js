@@ -23,8 +23,6 @@ export default function Home(props) {
       <Head>
         <title>Bryce Yoder</title>
       </Head>
-
-      <Header />
       <div class='pageContainer'>
         <StaticPage
           heading='Programming and Graphic Design'
