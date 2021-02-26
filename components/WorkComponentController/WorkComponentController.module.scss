@@ -71,12 +71,12 @@
         > div {
             position: fixed;
             width: inherit;
-            height: calc(100vh - 100px);
+            height: 100vh;
             overflow: scroll;
             -ms-overflow-style: none;
             scrollbar-width: none;
-            top: 100px;
-            padding-top: 80px;
+            top: 0px;
+            padding-top: 150px;
             transform: translateX(-10px);
             transition: opacity 0.4s ease, transform 0.4s ease;
 

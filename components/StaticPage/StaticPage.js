@@ -28,10 +28,10 @@ export class StaticPage extends Component {
     render() {
         return (
             <motion.div 
-                    initial='initial'
-                    animate='enter'
-                    exit='exit'
-                    variants={{ exit: { transition: { staggerChildren: 0.1 }}}}
+                initial='initial'
+                animate='enter'
+                exit='exit'
+                variants={{ exit: { transition: { staggerChildren: 0.1 }}}}
             >
                 <div className={styles.StaticPage}>
                     <div>

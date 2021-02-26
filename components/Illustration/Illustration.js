@@ -47,32 +47,31 @@ function Illustration(props) {
             />
             <style jsx global>{` .${styles.background} { background-color: ${props.bgColor}; }`}</style>
             {Object.keys(props.images).map((image, i) => (
-                <>
-                    <motion.img 
-                        src={'/images/illustrations/' + props.title + '/' + image + '.png'}
-                        id={'illustration' + i}
-                        alt=''
-                        className={`
-                            ${props.images[image]['rotate'] ? styles.rotate : ''}
-                            ${Math.random() > 0.5 ? styles.reverse : ''}
-                        `}
-                        variants={{ 
-                            initial: {
-                                opacity: 0,
-                                bottom: '0px',
-                                left: '0px',
-                            },
-                            exit: {
-                                opacity: 0,
-                            },
-                            enter: {
-                                left: props.images[image]['coords'][1],
-                                bottom: props.images[image]['coords'][0],
-                                opacity: 1
-                            }
-                        }}
-                    />
-                </>
+                <motion.img 
+                    src={'/images/illustrations/' + props.title + '/' + image + '.png'}
+                    id={'illustration' + i}
+                    key={i}
+                    alt=''
+                    className={`
+                        ${props.images[image]['rotate'] ? styles.rotate : ''}
+                        ${Math.random() > 0.5 ? styles.reverse : ''}
+                    `}
+                    variants={{ 
+                        initial: {
+                            opacity: 0,
+                            bottom: '0px',
+                            left: '0px',
+                        },
+                        exit: {
+                            opacity: 0,
+                        },
+                        enter: {
+                            left: props.images[image]['coords'][1],
+                            bottom: props.images[image]['coords'][0],
+                            opacity: 1
+                        }
+                    }}
+                />
             ))}
         </motion.div>
     )

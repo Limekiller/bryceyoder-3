@@ -23,7 +23,7 @@ export default function Home(props) {
       <Head>
         <title>Bryce Yoder</title>
       </Head>
-      <div class='pageContainer'>
+      <div className='pageContainer'>
         <StaticPage
           heading='Programming and Graphic Design'
           title='about'

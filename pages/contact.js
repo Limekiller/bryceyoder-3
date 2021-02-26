@@ -21,7 +21,7 @@ export default function Contact(props) {
       <Head>
         <title>Bryce Yoder | Contact</title>
       </Head>
-      <div class='pageContainer'>
+      <div className='pageContainer'>
         <StaticPage
           title="contact"
           heading="Drop me a line"
