@@ -6,11 +6,13 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
-import Router from 'next/router'
 import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps, router }) {
 
+  // Restore v9.5 fuctionality -- don't remove CSS styles on page changes.
+  // This prevents a flash of unstyled content on route changes when using Framer Motion
+  // https://github.com/vercel/next.js/issues/17464
   useEffect(() => {
     Array.from(
         document.querySelectorAll('head > link[rel="stylesheet"][data-n-p]')
@@ -36,14 +38,13 @@ function MyApp({ Component, pageProps, router }) {
     };
   }, []);
 
+  // Always snap to the to of the page on route changes
+  // Ideally this wouldn't happen when using back button, but it *needs* to be here for general page loads.
   useEffect(() => {
     setTimeout(() => {
         window.scroll(0,0);
     }, 500);
   });
-
-  // Router.events.on("routeChangeComplete", routeChange );
-  // Router.events.on("routeChangeStart", routeChange );
 
   return (
     <>
