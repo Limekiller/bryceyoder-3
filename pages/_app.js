@@ -7,25 +7,43 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import Router from 'next/router'
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps, router }) {
-  const routeChange = () => {
-    // Temporary fix to avoid flash of unstyled content
-    // during route transitions. Keep an eye on this
-    // issue and remove this code when resolved:
-    // https://github.com/vercel/next.js/issues/17464
 
-    const tempFix = () => {
-      const allStyleElems = document.querySelectorAll('style[media="x"]');
-      allStyleElems.forEach((elem) => {
-        elem.removeAttribute("media");
-      });
+  useEffect(() => {
+    Array.from(
+        document.querySelectorAll('head > link[rel="stylesheet"][data-n-p]')
+    ).forEach(node => {
+        node.removeAttribute('data-n-p');
+    });
+    const mutationHandler = mutations => {
+        mutations.forEach(({ target }) => {
+            if (target.nodeName === 'STYLE') {
+                if (target.getAttribute('media') === 'x') {
+                    target.removeAttribute('media');
+                }
+            }
+        });
     };
-    tempFix();
-  };
+    const observer = new MutationObserver(mutationHandler);
+    observer.observe(document.head, {
+        subtree: true,
+        attributeFilter: ['media'],
+    });
+    return () => {
+        observer.disconnect();
+    };
+  }, []);
 
-  Router.events.on("routeChangeComplete", routeChange );
-  Router.events.on("routeChangeStart", routeChange );
+  useEffect(() => {
+    setTimeout(() => {
+        window.scroll(0,0);
+    }, 500);
+  });
+
+  // Router.events.on("routeChangeComplete", routeChange );
+  // Router.events.on("routeChangeStart", routeChange );
 
   return (
     <>
