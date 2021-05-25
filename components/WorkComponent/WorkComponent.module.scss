@@ -1,31 +1,79 @@
-.workContainer {
-    display: flex;
-    margin-top: 50px;
-    opacity: 0.25;
-    transition: opacity 0.4s ease;
+.work {
+    grid-column: 1 / span 4;
+    margin-bottom: 10rem;
+    opacity: 0;
 
-    &.active {
-        opacity: 1;
+    h1 {
+        font-size: 3rem;
+        line-height: 2.75rem;
+    }
+    iframe {
+        grid-column: 2 / span 3;
+        width: inherit;
+        min-height: 33rem;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
     }
 
-    .body {
-        max-width: 800px;
+    .details {
+        grid-column: 1;
+        position: relative;
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .buttonContainer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+
+            button {
+                width: 100%;
+            }
+
+            .subButtons {
+                display: flex;
+                margin-top: 10px;
+
+                button {
+                    svg {
+                        fill: white;
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                    &.active, &:hover {
+                        background-color: white;
+                        svg {
+                            fill: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .preview {
+        max-height: 35rem;
+        grid-column: 2 / span 3;
+        width: 100%;
         
-        h1 {
-            margin-bottom: 100px;
-
-            @media (max-width: 1600px) {
-                margin-bottom: 30px;
-            }
+        img {
+            width: 100%;
+            border-radius: 5px;
         }
-        hr {
-            margin-top: 75px;
-            margin-bottom: 50px;
 
-            @media (max-width: 1600px) {
-                margin-bottom: 0px;
-            }
-        }
     }
 
+    &.viewed {
+        animation: viewed 1s ease forwards;
+    }
+
+    @keyframes viewed {
+        from {transform:translateY(20px);opacity:0;}
+        to {transform:translateY(0px);opacity:1;}
+    }
 }

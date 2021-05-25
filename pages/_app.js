@@ -1,11 +1,8 @@
 import '../styles/globals.scss'
 import { AnimatePresence, motion } from 'framer-motion'
 import Head from 'next/head'
+import Blob from '@/components/Blob/Blob.js'
 import Header from '@/components/Header/Header.js'
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
 import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps, router }) {
@@ -41,9 +38,8 @@ function MyApp({ Component, pageProps, router }) {
   // Always snap to the to of the page on route changes
   // Ideally this wouldn't happen when using back button, but it *needs* to be here for general page loads.
   useEffect(() => {
-    setTimeout(() => {
-        window.scroll(0,0);
-    }, 500);
+    document.querySelector('html').style.background = 'white'
+    window.scroll(0,0);
   });
 
   return (
@@ -56,16 +52,14 @@ function MyApp({ Component, pageProps, router }) {
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
+
+      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" />
+
     </Head>
     <Header />
-    <motion.div
-      animate={{opacity: [0, 1]}}
-      transition={{ delay: 0.25, duration: 0.25}}
-    >
-      <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
-    </motion.div>
+    <Blob />
+    <Component {...pageProps} key={router.route} />
     </>
   )
 }

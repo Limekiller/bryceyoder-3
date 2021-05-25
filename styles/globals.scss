@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+html {
+  transition: background 1s ease;
+}
 html, body {
   padding: 0;
   margin: 0;
@@ -11,18 +14,20 @@ html, body {
   overflow-x: hidden;
 }
 
-h1, h2 {
+p {
+  text-align: justify;
+}
+h1 {
   font-family: acumin-pro-extra-condensed, sans-serif;
 }
 h1 {
   font-weight: 700;
-  font-size: 120px;
   margin: 0;
-  line-height:110px;
 }
 h2 {
-  font-size: 50px;
-  line-height: 42px;
+  font-size: 2.75rem;
+  line-height: 3.5rem;
+  font-weight: 300;
 
   a {
     &:not(.button):after {
@@ -89,17 +94,28 @@ hr {
   border: 2px solid black;
 }
 
-.flex {
-  display: flex;
-}
-.vertical-flex-mobile {
-  @media (max-width: 1000px) {
-    flex-direction: column;
-  }
-}
 .pageContainer {
-  padding: 150px 50px 0px 50px;
+  padding: 7rem 10rem 0rem 10rem;
   min-height: 100vh;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 1fr;
+  grid-gap: 25px;
+  width: 100%;
+}
+.splide__arrows {
+  width: 100%;
+  position: relative;
+  top: 50%;
+}
+.splide__arrow {
+  border-radius: 0px;
+  border: 3px solid black;
+  background: white;
+}
+.splide__pagination {
+  display: none;
 }
 
 @media (max-width: 1600px) {
