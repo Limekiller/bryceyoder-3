@@ -1,7 +1,25 @@
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function Blob(props) {
-    const router = useRouter()
+    const router = useRouter();
+    const [pageIsLoading, setPageIsLoading] = useState(false);
+
+    const startPageLoad = () => {
+        setPageIsLoading(true);
+    }
+    const endPageLoad = () => {
+        setPageIsLoading(false);
+    }
+
+    useEffect(() => {
+        router.events.on("routeChangeStart", startPageLoad);
+        router.events.on("routeChangeComplete", endPageLoad);
+        return () => {
+            router.events.off("routeChangeStart", startPageLoad);
+            router.events.off("routeChangeComplete", endPageLoad);
+        }
+    }, [])
 
     return (
         <>
@@ -9,6 +27,7 @@ export default function Blob(props) {
                 className={`
                     blob
                     ${router.pathname}
+                    ${pageIsLoading ? 'loading' : ''}
                 `} 
             />
             <style jsx>{`
@@ -30,6 +49,14 @@ export default function Blob(props) {
                 }
                 .blob.\/work {
                     background-color: #b5edff;
+                }
+                .blob.loading {
+                    animation: spin 10s linear infinite;
+                }
+
+                @keyframes spin {
+                    from{transform:rotate(0deg);}
+                    to{transform:rotate(360deg);}
                 }
             `}</style>
         </>

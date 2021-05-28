@@ -1,7 +1,25 @@
 import Head from 'next/head'
 import Footer from '@/components/Footer/Footer.js'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const titleToMatch = 'Programming and<br />Graphic Design';
+  let title = '';
+  const [finalTitle, setFinalTitle] = useState('')
+
+  const addToTitle = (stringToMatch, index) => {
+    title += stringToMatch[index]
+    setFinalTitle(title);
+    if (title != stringToMatch) {
+      window.setTimeout(() => {
+        addToTitle(stringToMatch, index+1)
+      }, 10)
+    }
+  }
+
+  useEffect(() => {
+    addToTitle(titleToMatch, 0);
+  }, [])
 
   return (
     <>
@@ -10,7 +28,7 @@ export default function Home() {
       </Head>
       <div className='pageContainer'>
         <div className='gridContainer'>
-          <h1 className='title'>Programming and<br />Graphic Design</h1>
+          <h1 className='title' dangerouslySetInnerHTML={{__html: finalTitle}} />
           <h2 className='languages'>
             React, Next.js, Flask, Laravel, WordPress, Moodle, JavaScript, Python, PHP, Java, C#, Ansible, NGINX, Apache, AWS, PhotoShop, Illustrator, InDesign
           </h2>
