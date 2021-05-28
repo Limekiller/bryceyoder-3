@@ -4,10 +4,11 @@ import VisibilitySensor from 'react-visibility-sensor';
 
 export default function WorkComponent(props) { 
     const [hasViewed, setHasViewed] = useState('');
+    const [iframeInjected, setIframeInjected] = useState(false);
     const [viewState, setViewState] = useState('photos');
+    const [isMobile, setIsMobile] = useState(false);
     
     const changeColor = (isInView, color) => {
-        console.log(isInView)
         if (isInView) {
             setHasViewed(styles.viewed);
 
@@ -22,10 +23,18 @@ export default function WorkComponent(props) {
         new Splide( `.splide${props.images[0].split('/')[2]}`, {
             perPage: 1,
         }).mount();
+        if (window.innerWidth < 950) {
+            setIsMobile(true);
+        }
     }, [])
 
     return (
-        <VisibilitySensor delayedCall={true} onChange={(e) => changeColor(e, props.color)}>
+        <VisibilitySensor 
+            delayedCall={true} 
+            onChange={(e) => changeColor(e, props.color)}
+            partialVisibility={isMobile ? true : false}
+            offset={450}
+        >
             <div 
                 className={`
                     ${styles.work} 
@@ -39,13 +48,14 @@ export default function WorkComponent(props) {
                     <h1>{props.title}</h1>
                     <p dangerouslySetInnerHTML={{ __html: props.details }} />
                     <div className={styles.buttonContainer}>
-                        <button>{props.button}</button>
-                        
+                        {props.link ?
+                            <a href={props.link} target='_blank' className={`button ${styles.button}`}>{props.button}</a>
+                        : ''}
                         {props.button == 'Visit the live site!' ? 
                         <div className={styles.subButtons}>
                             <button
                                 className={viewState == 'live' ? styles.active : ''}
-                                onClick={() => setViewState('live')}
+                                onClick={() => {setViewState('live'); setIframeInjected(true);}}
                             >
                                 <svg height="50px" width="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px" y="0px"><title>Live Video</title><g data-name="Layer 11"><path d="M11.57,23a1,1,0,0,1-.68-.27,9.28,9.28,0,0,1,0-13.46,1,1,0,0,1,1.36,1.46,7.3,7.3,0,0,0,0,10.54A1,1,0,0,1,11.57,23Zm-4,2.68a1,1,0,0,0,0-1.41,11.43,11.43,0,0,1,0-16.54A1,1,0,1,0,6.16,6.27a13.44,13.44,0,0,0,0,19.46,1,1,0,0,0,1.42-.05ZM21.1,22.73a9.28,9.28,0,0,0,0-13.46,1,1,0,1,0-1.37,1.46,7.27,7.27,0,0,1,0,10.54,1,1,0,0,0-.05,1.41,1,1,0,0,0,.74.32A1,1,0,0,0,21.1,22.73Zm4.72,3a13.41,13.41,0,0,0,0-19.46,1,1,0,0,0-1.36,1.46,11.43,11.43,0,0,1,0,16.54,1,1,0,0,0-.05,1.41,1,1,0,0,0,.73.32A1,1,0,0,0,25.82,25.73ZM18,16a2,2,0,1,0-2,2A2,2,0,0,0,18,16Zm-2,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Z"/></g></svg>
                             </button>
@@ -60,8 +70,10 @@ export default function WorkComponent(props) {
                     </div>
                 </div>
                 <div className={styles.preview}>
-                    {props.button == 'Visit the live site!' ? 
-                        <iframe style={{display: viewState == 'live' ? 'initial' : 'none'}} src={props.link}></iframe>
+                    {iframeInjected ? 
+                        <div style={{display: viewState == 'live' ? 'block' : 'none'}} className={styles.iframeWrap}>
+                            <iframe src={props.link}></iframe>
+                        </div>
                     : ''}
                     <div 
                         style={{display: viewState == 'photos' ? 'initial' : 'none'}} 

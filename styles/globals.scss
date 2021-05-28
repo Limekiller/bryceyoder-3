@@ -4,13 +4,13 @@
 
 html {
   transition: background 1s ease;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 html, body {
   padding: 0;
   margin: 0;
   font-family: acumin-pro, sans-serif;
-  font-size: 20px;
-  line-height: 30px;
   overflow-x: hidden;
 }
 
@@ -31,12 +31,12 @@ h2 {
 
   a {
     &:not(.button):after {
-      height: 5px;
+      height: .25rem;
       background: black;
       display: inline-block;
       position: absolute;
       left: 0;
-      top: 70px;
+      top: 4rem;
     }
   }
 }
@@ -52,12 +52,12 @@ a:not(.button) {
   &:after {
     content: "";
     width: 100%;
-    height: 3px;
+    height: .15rem;
     background: black;
     display: inline-block;
     position: absolute;
     left: 0;
-    top: 28px;
+    top: 1.25rem;
   }
 
   &:hover:after {
@@ -77,7 +77,7 @@ button, .button {
   transition: border 0.4s ease;
   text-transform: capitalize;
   font-family: acumin-pro, sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
 
   &.img-button {
     font-size: 50px;
@@ -101,13 +101,14 @@ hr {
 .gridContainer {
   display: grid;
   grid-template-columns: 20% 20% 20% 1fr;
-  grid-gap: 25px;
+  grid-column-gap: 25px;
   width: 100%;
 }
 .splide__arrows {
-  width: 100%;
+  width: 7rem;
   position: relative;
-  top: 50%;
+  top: 95%;
+  left: 89%;
 }
 .splide__arrow {
   border-radius: 0px;
@@ -117,43 +118,57 @@ hr {
 .splide__pagination {
   display: none;
 }
+.splide__list {
+  display: flex;
+  height: 100%;
+}
+.splide__track {
+  height: 30rem;
+}
 
-@media (max-width: 1600px) {
-  body {
-    font-size: 18px;
-  }
-  h1 {
-    font-size: 90px;
-    line-height: 83px;
+@media screen and (max-width: 1850px) {
+    html {
+      font-size: 16px;
+    }
+    .splide__track {
+      height: 35rem;
+    }
+}
+@media screen and (max-width: 1450px) {
+  html {
+    font-size: 14px;
   }
 }
-@media (max-width: 1000px) {
-  body {
-    font-size: 16px;
-    line-height: 24px;
+@media screen and (max-width: 1250px) {
+  html {
+    font-size: 11px;
   }
-  h1 {
-    font-size: 60px;
-    line-height: 53px;
-  }
-  h2 {
-    font-size: 35px;
-
-    a:not(.button)::after {
-      top: 50px;
-    }
+}
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 18px;
   }
   .pageContainer {
-    padding: 150px 25px 0px 25px;
+    padding: 8rem 1rem 0rem 1rem;
   }
-  button, .button {
-    font-size: 15px;
+  .gridContainer {
+    grid-template-columns: 33% 1fr;
+    grid-column-gap: 15px;
   }
-  a {
-    &:not(.button):after {
-      height: 2px;
-      top: 22px;
-    }
+
+  .splide__arrows {
+    z-index: 2;
+    width: 100%;
+    left: 0;
+  }
+  .splide__arrow {
+    left: unset;
+  }
+  .splide__arrow--next {
+    right: 0;
+  }
+  .splide__track {
+    height: min-content;
   }
 }
 

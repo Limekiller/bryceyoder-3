@@ -38,6 +38,26 @@ export default function Home() {
         p {
           margin-top: 3rem;
         }
+
+        @media screen and (max-width: 950px) {
+          p {
+            margin-top: 0;
+          }
+          .title {
+            grid-column: 1;
+            font-size: 16.5vw;
+            line-height: 15vw;
+            margin-bottom: 3rem;
+          }
+          .languages {
+            margin-top: 0;
+            grid-column: 1;
+            grid-row: 2 / span 2;
+          }
+          .gridContainer {
+            grid-template-columns: 100%;
+          }
+        }
       `}</style>
     </>
   )
