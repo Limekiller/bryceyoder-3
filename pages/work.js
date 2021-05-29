@@ -2,6 +2,7 @@ import Head from 'next/head'
 import WorkComponent from '@/components/WorkComponent/WorkComponent.js'
 import Footer from '@/components/Footer/Footer.js'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Work(props) {
   const [currentCategory, setCurrentCategory] = useState('websites');
@@ -278,7 +279,11 @@ export default function Work(props) {
   } 
 
   return (
-    <>
+    <motion.div 
+      initial={{opacity: 0, y: -50}}
+      animate={{opacity: 1, y: 0, transition: {ease: [0.16, 1, 0.3, 1], duration: 0.75}}}
+      exit={{opacity: 0, y: 50, transition: {ease: [0.7, 0, 0.84, 0], duration: 0.75}}}
+    >
       <Head>
         <title>Bryce Yoder | Work</title>
       </Head>
@@ -298,6 +303,6 @@ export default function Work(props) {
           }
         }
       `}</style>
-    </>
+    </motion.div>
   )
 }

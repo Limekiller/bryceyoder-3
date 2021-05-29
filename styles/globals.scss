@@ -31,7 +31,7 @@ h2 {
 
   a {
     &:not(.button):after {
-      height: .25rem;
+      height: .1rem;
       background: black;
       display: inline-block;
       position: absolute;
@@ -52,7 +52,7 @@ a:not(.button) {
   &:after {
     content: "";
     width: 100%;
-    height: .15rem;
+    height: .1rem;
     background: black;
     display: inline-block;
     position: absolute;
@@ -113,7 +113,15 @@ hr {
 .splide__arrow {
   border-radius: 0px;
   border: 3px solid black;
-  background: white;
+  background: black;
+  color: white;
+  opacity: 1;
+}
+.splide__arrow svg {
+  fill: white;
+}
+.splide__arrow:hover svg {
+  fill: black;
 }
 .splide__pagination {
   display: none;
@@ -149,7 +157,7 @@ hr {
     font-size: 18px;
   }
   .pageContainer {
-    padding: 8rem 1rem 0rem 1rem;
+    padding: 100px 1rem 0rem 1rem;
   }
   .gridContainer {
     grid-template-columns: 33% 1fr;
@@ -157,9 +165,9 @@ hr {
   }
 
   .splide__arrows {
-    z-index: 2;
-    width: 100%;
-    left: 0;
+    top: 55vw;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .splide__arrow {
     left: unset;

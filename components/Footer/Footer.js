@@ -23,7 +23,7 @@ export default function Footer() {
                     }
                     .gridContainer h2 a {
                         font-size: 9vw;
-                        font-weight: 600;
+                        font-weight: 500;
                     }
                     .gridContainer h2 a:after {
                         top: 14vw;

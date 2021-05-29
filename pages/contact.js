@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Footer from '@/components/Footer/Footer.js'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Contact(props) {
   const titleToMatch = 'Drop me a line';
@@ -22,7 +23,11 @@ export default function Contact(props) {
   }, [])
 
   return (
-    <>
+    <motion.div 
+      initial={{opacity: 0, y: -50}}
+      animate={{opacity: 1, y: 0, transition: {ease: [0.16, 1, 0.3, 1], duration: 0.75}}}
+      exit={{opacity: 0, y: 50, transition: {ease: [0.7, 0, 0.84, 0], duration: 0.75}}}
+    >
       <Head>
         <title>Bryce Yoder | Contact</title>
       </Head>
@@ -85,6 +90,6 @@ export default function Contact(props) {
           }
         }
       `}</style>
-    </>
+    </motion.div>
   )
 }

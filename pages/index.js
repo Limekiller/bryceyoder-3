@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Footer from '@/components/Footer/Footer.js'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion';
 
 export default function Home() {
-  const titleToMatch = 'Programming and<br />Graphic Design';
+  const titleToMatch = 'Programming and Graphic Design';
   let title = '';
   const [finalTitle, setFinalTitle] = useState('')
 
@@ -22,7 +23,11 @@ export default function Home() {
   }, [])
 
   return (
-    <>
+    <motion.div 
+      initial={{opacity: 0, y: -50}}
+      animate={{opacity: 1, y: 0, transition: {ease: [0.16, 1, 0.3, 1], duration: 0.75}}}
+      exit={{opacity: 0, y: 50, transition: {ease: [0.7, 0, 0.84, 0], duration: 0.75}}}
+    >
       <Head>
         <title>Bryce Yoder</title>
       </Head>
@@ -77,6 +82,6 @@ export default function Home() {
           }
         }
       `}</style>
-    </>
+    </motion.div>
   )
 }

@@ -43,6 +43,8 @@ export default function Blob(props) {
                     z-index: -1;
                     transition: background 0.4s ease;
                     background-blend-mode: overlay;
+                    animation: spin 10s linear infinite;
+                    animation-play-state: paused;
                 }
                 .blob.\/contact {
                     background-color: #ffe5e5;
@@ -51,7 +53,7 @@ export default function Blob(props) {
                     background-color: #b5edff;
                 }
                 .blob.loading {
-                    animation: spin 10s linear infinite;
+                    animation-play-state: running;
                 }
 
                 @keyframes spin {

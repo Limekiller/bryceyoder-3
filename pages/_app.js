@@ -1,5 +1,5 @@
 import '../styles/globals.scss'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
 import Blob from '@/components/Blob/Blob.js'
 import Header from '@/components/Header/Header.js'
@@ -44,22 +44,24 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-    <Head>
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="description" content="Generalist developer living in northern Indiana with experience in web development, systems administration, DevOps, and UI & graphic design." />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
+      <Head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="description" content="Generalist developer living in northern Indiana with experience in web development, systems administration, DevOps, and UI & graphic design." />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
-      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" />
 
-    </Head>
-    <Header />
-    <Blob />
-    <Component {...pageProps} key={router.route} />
+      </Head>
+      <Header />
+      <Blob />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
     </>
   )
 }
