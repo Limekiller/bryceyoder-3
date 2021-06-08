@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import WorkComponent from '@/components/WorkComponent/WorkComponent.js'
 import Footer from '@/components/Footer/Footer.js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 export default function Work(props) {
@@ -278,11 +278,18 @@ export default function Work(props) {
     'transition': <div style={{height: '100vh'}} />
   } 
 
+  useEffect(() => {
+    return () => {
+      document.querySelector('.blob').style.background = '';
+      document.querySelector('html').style.background = '';
+    }
+  }, [])
+
   return (
     <motion.div 
-      initial={{opacity: 0, y: -50}}
-      animate={{opacity: 1, y: 0, transition: {ease: [0.16, 1, 0.3, 1], duration: 0.75}}}
-      exit={{opacity: 0, y: 50, transition: {ease: [0.7, 0, 0.84, 0], duration: 0.75}}}
+      initial={{opacity: 0, y: 0}}
+      animate={{opacity: 1, y: 0, transition: {ease: 'easeInOut', duration: 0.25}}}
+      exit={{opacity: 0, y: 0, transition: {ease: 'easeInOut', duration: 0.25}}}
     >
       <Head>
         <title>Bryce Yoder | Work</title>

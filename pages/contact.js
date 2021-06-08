@@ -24,9 +24,9 @@ export default function Contact(props) {
 
   return (
     <motion.div 
-      initial={{opacity: 0, y: -50}}
-      animate={{opacity: 1, y: 0, transition: {ease: [0.16, 1, 0.3, 1], duration: 0.75}}}
-      exit={{opacity: 0, y: 50, transition: {ease: [0.7, 0, 0.84, 0], duration: 0.75}}}
+      initial={{opacity: 0, y: 0}}
+      animate={{opacity: 1, y: 0, transition: {ease: 'easeInOut', duration: 0.25}}}
+      exit={{opacity: 0, y: 0, transition: {ease: 'easeInOut', duration: 0.25}}}
     >
       <Head>
         <title>Bryce Yoder | Contact</title>
