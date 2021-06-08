@@ -22,7 +22,7 @@ export default function Blob(props) {
     }, [])
 
     return (
-        <>
+        <div className='blobContainer'>
             <div 
                 className={`
                     blob
@@ -31,16 +31,21 @@ export default function Blob(props) {
                 `} 
             />
             <style jsx>{`
-                .blob {
+                .blobContainer {
                     width: 45rem;
                     height: 45rem;
-                    background-color: #b8fdb8;
-                    background-image: url(/images/noise.jpg);
                     position: absolute;
-                    border-radius: 25rem;
                     top: -380px;
                     left: -250px;
                     z-index: -1;
+                    mask-image: linear-gradient(to bottom right,black 40%,rgba(0,0,0,0.1) 80%);
+                }
+                .blob {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #b8fdb8;
+                    background-image: url(/images/noise.jpg);
+                    border-radius: 25rem;
                     transition: background 0.4s ease;
                     background-blend-mode: overlay;
                     animation: spin 10s linear infinite;
@@ -61,6 +66,6 @@ export default function Blob(props) {
                     to{transform:rotate(360deg);}
                 }
             `}</style>
-        </>
+        </div>
     )
 }

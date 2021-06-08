@@ -8,6 +8,10 @@ export default function WorkComponent(props) {
     const [viewState, setViewState] = useState('photos');
     const [isMobile, setIsMobile] = useState(false);
     
+    const changeColorShade = (color, amount) => {
+        return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+    }
+
     const changeColor = (isInView, color) => {
         if (isInView) {
             setHasViewed(styles.viewed);
@@ -15,6 +19,7 @@ export default function WorkComponent(props) {
             // This doesn't fire if we don't add a slight delay, for some reason
             window.setTimeout(() => {
                 document.querySelector('html').style.background = color;
+                document.querySelector('.blob').style.backgroundColor = changeColorShade(color, -15);
             }, 50)
         }
     }
