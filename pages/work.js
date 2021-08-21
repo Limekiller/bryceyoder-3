@@ -37,6 +37,26 @@ export default function Work(props) {
       />
 
       <WorkComponent
+        title='Beth Oberholtzer Design'
+        details={`
+          <p>Beth wanted a website to display her books and host her portfolio, promoting her work to both readers and clients.</p>
+          <ul>
+            <li>Instantaneous page loads with React/Next.js</li>
+            <li>Interactive design portfolio</li>
+            <li>Responsive design</li>
+          </ul>
+        `}
+        link='https://bethoberholtzerdesign.com'
+        color='#D9FFDB'
+        button='Visit the live site!'
+        images={[
+          '/websites/bod/images/0.png',
+          '/websites/bod/images/1.png',
+          '/websites/bod/images/2.png'
+        ]}
+      />
+
+      <WorkComponent
         title='Dorothy Yoder Nyce'
         details={`
           Dorothy needed a personal website to host her writing. I created a simple and streamlined design that makes it incredibly easy for anybody to access, browse, and search her work.
@@ -59,7 +79,7 @@ export default function Work(props) {
       <WorkComponent
         title='Policlínico Vásquez'
         details={`
-          A website for a clinic I created from the ground-up using WordPress while living in Arequipa, Perú. Completing this project was a unique challenge, as I had to create mockups, plan features, and build the site while communicating in Spanish with the client, all on a relatively short timetable. 
+          A website for a clinic I created from the ground-up using WordPress while living in Arequipa, Perú. Completing this project was a unique challenge, as I had to create mockups, plan features, and build the site while communicating in Spanish with the client, all on a relatively short timetable.
           <ul>
             <li>Easy editing with WordPress</li>
             <li>Responsive design</li>
@@ -276,7 +296,7 @@ export default function Work(props) {
       />
     </>,
     'transition': <div style={{height: '100vh'}} />
-  } 
+  }
 
   useEffect(() => {
     return () => {
@@ -286,7 +306,7 @@ export default function Work(props) {
   }, [])
 
   return (
-    <motion.div 
+    <motion.div
       initial={{opacity: 0, y: 0}}
       animate={{opacity: 1, y: 0, transition: {ease: 'easeInOut', duration: 0.25}}}
       exit={{opacity: 0, y: 0, transition: {ease: 'easeInOut', duration: 0.25}}}
