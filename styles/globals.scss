@@ -165,18 +165,24 @@ hr {
   }
 
   .splide__arrows {
-    top: 55vw;
-    left: 50%;
-    transform: translateX(-50%);
+    top: -25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    width: 100%;
+    left: unset;
   }
   .splide__arrow {
     left: unset;
+    width: 100%;
+    position: relative;
   }
   .splide__arrow--next {
-    right: 0;
+    right: unset;
   }
   .splide__track {
     height: min-content;
+    margin-top: -6px;
   }
 }
 

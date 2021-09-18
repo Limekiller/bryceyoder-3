@@ -37,8 +37,9 @@ export default function WorkComponent(props) {
         <VisibilitySensor 
             delayedCall={true} 
             onChange={(e) => changeColor(e, props.color)}
-            partialVisibility={isMobile ? true : false}
-            offset={450}
+            partialVisibility={true}
+            minTopValue={isMobile ? 450 : 0}
+            offset={isMobile ? {} : {bottom:600, top:400}}
         >
             <div 
                 className={`

@@ -10,18 +10,15 @@
     transform: translateY(-100px);
     padding-top: 1rem;
     background: transparent;
-    transition: margin-top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-    &.scrolled {
-        // background: linear-gradient(#ffffffa6 81%, transparent);
-    }
 
     @media (max-width: 500px) {
         flex-direction: column;
-        height: 130px;
+        height: 70px;
 
         &.scrolled {
-            margin-top: -75px;
+            img {
+                top: -75px;
+            }
         }
     }
 
@@ -29,7 +26,10 @@
         height: 55px;
         width: auto;
         margin-top: 5px;
-        // filter: invert(1);
+        position: relative;
+        left: 0px;
+        top: 0px;
+        transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
         &.mobileLogo {
             display: none;
@@ -38,20 +38,18 @@
         @media (max-width: 500px) {
             width: 90px;
             height: auto;
-            margin: 0 auto;
             margin-bottom: 10px;
 
             &.mobileLogo {
                 display: block;
                 position: absolute;
-                height: 40px;
+                height: 48px;
                 width: auto;
-                top: 82px;
+                top: 16px;
                 left: -35px;
-                transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
                 &.scrolled {
-                    left: 15px;
+                    left: 21px;
                 }
             }
         }
@@ -67,8 +65,8 @@
 
         a {
             font-size: 20px;
+            transition: margin-right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             margin-top: 10px;
-            transition: margin 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             
             &:not(:last-child) {
                 margin-right: 15px;
@@ -83,13 +81,18 @@
             transition: margin 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             margin-left: -100px;
 
+            a {
+                &:after {
+                    top: 26px;
+                }
+            }
+
             &.scrolled {
                 margin-left: -100px;
-                margin-top: 70px;
 
                 a {                    
                     &:not(:last-child) {
-                        margin-right: 35px;
+                        margin-right: 40px;
                     }
                 }
             }
