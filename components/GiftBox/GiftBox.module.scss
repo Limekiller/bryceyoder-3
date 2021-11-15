@@ -2,6 +2,9 @@
     width: 200px;
     height: 200px;
     perspective: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     body {
         background: linear-gradient(-20deg, #a8dadc 20%, #457b9d 20%, #457b9d 30%, #1d3557 30%, #1d3557 70%, #457b9d 70%, #457b9d 80%, #a8dadc 80% );
@@ -38,7 +41,7 @@
             width: 220px;
             height: 50px;
             border: 2px solid var(--gift-box-edge-color);
-            animation: fade-lid 1s 5s ease forwards;
+            animation: fade-lid 1s 6s ease forwards;
         }
 
         .giftBoxLidEnd {
@@ -46,7 +49,7 @@
             width: 220px;
             height: 220px;
             border: 2px solid var(--gift-box-edge-color);
-            animation: fade-lid 1s 5s ease forwards;
+            animation: fade-lid 1s 6s ease forwards;
         }
 
         .giftBoxSide, .giftBoxLidSide {
@@ -152,8 +155,6 @@
         opacity: 0;
         width: 50px;
         height: auto;
-        left: 50%;
-        top: 50%;
         animation: image 2s 8s forwards cubic-bezier(0.76, 0, 0.24, 1);
       }
       
