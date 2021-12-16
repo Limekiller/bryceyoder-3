@@ -89,7 +89,7 @@ export default function WorkComponent(props) {
                         <div className='splide__track'>
                             <div className='splide__list'>
                                 {props.images.map((image, index) => {
-                                    return <li className='splide__slide' key={index} ><Image src={`/work${image}`} layout='fill' /></li>
+                                    return <li className='splide__slide' key={index} ><img src={`/work${image}`} /></li>
                                 })}
                             </div>
                         </div>
