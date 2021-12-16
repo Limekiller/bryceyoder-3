@@ -1,6 +1,7 @@
 import styles from './WorkComponent.module.scss'
 import { useEffect, useState } from 'react'
-import VisibilitySensor from 'react-visibility-sensor';
+import VisibilitySensor from 'react-visibility-sensor'
+import Image from 'next/image'
 
 export default function WorkComponent(props) { 
     const [hasViewed, setHasViewed] = useState('');
@@ -88,7 +89,7 @@ export default function WorkComponent(props) {
                         <div className='splide__track'>
                             <div className='splide__list'>
                                 {props.images.map((image, index) => {
-                                    return <li className='splide__slide' key={index} ><img src={`/work${image}`} /></li>
+                                    return <li className='splide__slide' key={index} ><Image src={`/work${image}`} layout='fill' /></li>
                                 })}
                             </div>
                         </div>
