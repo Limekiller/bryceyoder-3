@@ -1,0 +1,29 @@
+.CursiveHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    .title {
+        margin: 0;
+        flex-shrink: 0;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .afterBar {
+        width: 0%;
+        height: 2px;
+        background: black;
+        animation: slideBar 1s 0.4s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        animation-play-state: paused;
+
+        &.viewed {
+            animation-play-state: running;
+        }
+    }
+
+    @keyframes slideBar {
+        from {width: 0%;}
+        to {width: 100%;}
+    }
+}

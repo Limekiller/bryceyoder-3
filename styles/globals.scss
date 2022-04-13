@@ -133,6 +133,11 @@ hr {
 .splide__track {
   height: 30rem;
 }
+.cursive {
+  font-family: alkaline, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
 
 @media screen and (max-width: 1850px) {
     html {
@@ -157,7 +162,7 @@ hr {
     font-size: 18px;
   }
   .pageContainer {
-    padding: 100px 1rem 0rem 1rem;
+    padding: 140px 1rem 0rem 1rem;
   }
   .gridContainer {
     grid-template-columns: 33% 1fr;

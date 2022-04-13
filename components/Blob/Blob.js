@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 export default function Blob(props) {
     const router = useRouter();
     const [pageIsLoading, setPageIsLoading] = useState(false);
+    const fadeDirection = props.fadeDirection ? props.fadeDirection : 'bottom right';
 
     const startPageLoad = () => {
         setPageIsLoading(true);
@@ -26,35 +27,35 @@ export default function Blob(props) {
             <div 
                 className={`
                     blob
-                    ${router.pathname}
+                    ${router.pathname.slice(1)}
                     ${pageIsLoading ? 'loading' : ''}
                 `} 
             />
             <style jsx>{`
                 .blobContainer {
-                    width: 45rem;
-                    height: 45rem;
+                    width: ${props.size ? props.size : '45rem'};
+                    height: ${props.size ? props.size : '45rem'};
                     position: absolute;
-                    top: -380px;
-                    left: -250px;
+                    top: ${props.top ? props.top : '-380px'};
+                    left: ${props.left ? props.left : '-250px'};
                     z-index: -1;
-                    mask-image: linear-gradient(to bottom right,black 40%,rgba(0,0,0,0.1) 80%);
+                    mask-image: linear-gradient(to ${fadeDirection},black 40%,rgba(0,0,0,0.1) 80%);
                 }
                 .blob {
                     width: 100%;
                     height: 100%;
                     background-color: #b8fdb8;
                     background-image: url(/images/noise.jpg);
-                    border-radius: 25rem;
+                    border-radius: 9999rem;
                     transition: background 0.4s ease;
                     background-blend-mode: overlay;
                     animation: spin 10s linear infinite;
                     animation-play-state: paused;
                 }
-                .blob.\/contact {
+                .blob.contact {
                     background-color: #ffe5e5;
                 }
-                .blob.\/work {
+                .blob.work {
                     background-color: #b5edff;
                 }
                 .blob.loading {

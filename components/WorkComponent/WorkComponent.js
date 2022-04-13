@@ -1,7 +1,7 @@
 import styles from './WorkComponent.module.scss'
 import { useEffect, useState } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
-import Image from 'next/image'
+import CursiveHeader from '../CursiveHeader/CursiveHeader';
 
 export default function WorkComponent(props) { 
     const [hasViewed, setHasViewed] = useState('');
@@ -20,7 +20,9 @@ export default function WorkComponent(props) {
             // This doesn't fire if we don't add a slight delay, for some reason
             window.setTimeout(() => {
                 document.querySelector('html').style.background = color;
-                document.querySelector('.blob').style.backgroundColor = changeColorShade(color, -15);
+                document.querySelectorAll('.blob').forEach(blob => {
+                    blob.style.backgroundColor = changeColorShade(color, -15);
+                })
             }, 50)
         }
     }
@@ -49,10 +51,10 @@ export default function WorkComponent(props) {
                     work 
                     gridContainer
                 `}
-                onScroll={() => console.log(isInViewport())}
             >
                 <div className={styles.details}>
                     <h1>{props.title}</h1>
+                    <CursiveHeader title={props.type} />
                     <p dangerouslySetInnerHTML={{ __html: props.details }} />
                     <div className={styles.buttonContainer}>
                         {props.link ?
@@ -89,7 +91,7 @@ export default function WorkComponent(props) {
                         <div className='splide__track'>
                             <div className='splide__list'>
                                 {props.images.map((image, index) => {
-                                    return <li className='splide__slide' key={index} ><img src={`/work${image}`} /></li>
+                                    return <li className='splide__slide' key={index} ><img src={`/work${image}`} alt={`Image ${index + 1} for ${props.title}`}/></li>
                                 })}
                             </div>
                         </div>
