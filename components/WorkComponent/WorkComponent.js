@@ -19,7 +19,7 @@ export default function WorkComponent(props) {
 
             // This doesn't fire if we don't add a slight delay, for some reason
             window.setTimeout(() => {
-                document.querySelector('html').style.background = color;
+                document.querySelector('.background').style.backgroundColor = color;
                 document.querySelectorAll('.blob').forEach(blob => {
                     blob.style.backgroundColor = changeColorShade(color, -15);
                 })

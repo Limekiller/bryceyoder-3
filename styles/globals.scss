@@ -3,7 +3,7 @@
 }
 
 html {
-  transition: background 1s ease;
+  transition: background-color 1s ease;
   font-size: 1.25rem;
   line-height: 1.5rem;
 }
@@ -94,6 +94,15 @@ hr {
   border: 2px solid black;
 }
 
+.background {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: -1;
+  transition: background-color 1s ease;
+}
 .pageContainer {
   padding: 7rem 10rem 0rem 10rem;
   min-height: 100vh;

@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bryce Yoder | Lancaster, PA-based web development</title>
+        <title>Bryce Yoder | Lancaster, PA-based web design and Moodle development</title>
       </Head>
       <div className='pageContainer'>
         <motion.div 

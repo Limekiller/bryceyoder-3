@@ -115,11 +115,42 @@ export default function Work(props) {
           '/projects/lido/images/3.jpg'
         ]}
       />
+
+      <WorkComponent
+        title='OpenAI Chat Block'
+        type='Moodle development'
+        details={`
+          <p>This Moodle block allows users to get 24/7 chat support through OpenAI's GPT-3 predictive text model. The prompt is fully customizable, allowing an admin to give the AI any personality they want.</p>
+        `}
+        link='https://github.com/Limekiller/moodle-block_openai_chat'
+        color='#FFFFFF'
+        button='Install on your Moodle site'
+        images={[
+          '/projects/block_openai_chat/1.webp',
+          '/projects/block_openai_chat/2.webp',
+        ]}
+      />
+
+      <WorkComponent
+        title='local_gitplugins'
+        type='Moodle development'
+        details={`
+          <p>This Moodle plugin allows administrators to install plugins on GitHub directly to their site through the UI.</p>
+        `}
+        link='https://github.com/Limekiller/moodle-local_gitplugins'
+        color='#FFFFFF'
+        button='Install on your Moodle site'
+        images={[
+          '/projects/local_gitplugins/1.webp',
+          '/projects/local_gitplugins/2.webp',
+        ]}
+      />
+
       <WorkComponent
         title='Fileshare'
         type='Personal project'
         details={`
-          <p>Quick project to teach myself React: your standard filesharing website. Upload files and receive a unique code to share. </p>
+          <p>Upload files and receive a unique code to share. </p>
         `}
         link='http://fileshare.bryceyoder.com'
         color='#D9FFF6'

@@ -10,7 +10,6 @@ export default function CursiveHeader(props) {
     const animateLine = (isInView) => {
         if (isInView) {
             sethasViewed(true)
-            console.log('ok')
         }
     }
 

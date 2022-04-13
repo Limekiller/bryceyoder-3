@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps, router }) {
   // Always snap to the to of the page on route changes
   // Ideally this wouldn't happen when using back button, but it *needs* to be here for general page loads.
   useEffect(() => {
-    document.querySelector('html').style.background = 'white'
+    document.querySelector('.background').style.background = 'white'
     setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'})}, 250);
   });
 
@@ -58,6 +58,7 @@ function MyApp({ Component, pageProps, router }) {
 
       </Head>
       <Header />
+      <div className='background' />
       <Blob />
       <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.route} />
