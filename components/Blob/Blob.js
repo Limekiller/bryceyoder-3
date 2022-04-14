@@ -45,7 +45,7 @@ export default function Blob(props) {
                     width: 100%;
                     height: 100%;
                     background-color: #b8fdb8;
-                    background-image: url(/images/noise.jpg);
+                    background-image: url(/images/noise.webp);
                     border-radius: 9999rem;
                     transition: background 0.4s ease;
                     background-blend-mode: overlay;
