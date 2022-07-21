@@ -19,6 +19,20 @@
         justify-content: space-between;
     }
 
+    .socialIcons {
+        display: flex;
+        width: auto;
+        align-items: center;
+
+        a:after {
+            display: none;
+        }
+        svg {
+            width: 1.25rem;
+            margin-left: 0.5rem;
+        }
+    }
+
     @media screen and (max-width: 950px) {
         .lineText {
             flex-direction: column;

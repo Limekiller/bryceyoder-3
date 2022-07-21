@@ -51,16 +51,6 @@
             }
         }
 
-        .socialIcons {
-            a:after {
-                display: none;
-            }
-            svg {
-                width: 1.25rem;
-                margin-top: 1rem;
-            }
-        }
-
         @media (max-width: 950px) {
             justify-content: space-between;
             grid-column: 1 / span 2;
@@ -85,7 +75,7 @@
                 }
 
                 &:last-child {
-                    margin-right: 45px;
+                    margin-right: 0px;
                 }
             }
         }
