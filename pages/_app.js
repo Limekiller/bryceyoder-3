@@ -1,12 +1,13 @@
 import '../styles/globals.scss'
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
-import Script from 'next/script'
 import Blob from '@/components/Blob/Blob.js'
 import Header from '@/components/Header/Header.js'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react';
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps }) {
+  const router = useRouter()
 
   // Restore v9.5 fuctionality -- don't remove CSS styles on page changes.
   // This prevents a flash of unstyled content on route changes when using Framer Motion
@@ -39,9 +40,15 @@ function MyApp({ Component, pageProps, router }) {
   // Always snap to the to of the page on route changes
   // Ideally this wouldn't happen when using back button, but it *needs* to be here for general page loads.
   useEffect(() => {
-    document.querySelector('.background').style.background = 'white'
-    setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'})}, 250);
-  });
+    router.events.on('routeChangeComplete', (url => {
+      setTimeout(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
+        if (url !== '/work') {
+          document.querySelector('.background').style.background = 'white'
+        }
+      }, 250);
+    }))
+  }, []);
 
   return (
     <>

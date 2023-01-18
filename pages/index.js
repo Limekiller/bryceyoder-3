@@ -79,7 +79,6 @@ export default function Home() {
           grid-column: 1 / span 4;
           font-size: 8rem;
           line-height: 7.5rem;
-          text-align: center;
         }
         .languages {
           grid-column: 4;

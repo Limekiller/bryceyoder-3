@@ -26,7 +26,7 @@ export default function Work(props) {
         `}
         link='https://lmpeacecenter.org'
         color='#d9f6ff'
-        button='Visit the live site!'
+        button='Open in new tab'
         images={[
           '/websites/lmpc/images/0.png',
           '/websites/lmpc/images/1.png'
@@ -41,7 +41,7 @@ export default function Work(props) {
         `}
         link='https://bethoberholtzerdesign.com'
         color='#D9FFDB'
-        button='Visit the live site!'
+        button='Open in new tab'
         images={[
           '/websites/bod/images/0.png',
           '/websites/bod/images/1.png',
@@ -57,7 +57,7 @@ export default function Work(props) {
         `}
         link='https://dorothyyodernyce.com'
         color='#FFE7D9'
-        button='Visit the live site!'
+        button='Open in new tab'
         images={[
           '/websites/dyn/images/0.jpg',
           '/websites/dyn/images/1.jpg',
@@ -117,6 +117,38 @@ export default function Work(props) {
       />
 
       <WorkComponent
+        title='Puzzlesolve.net'
+        type='Personal project'
+        details={`
+          <p>Free puzzle solver for New York Times daily games</p>
+        `}
+        link='https://puzzlesolve.net'
+        color='#DAFFD9'
+        button='Open in new tab'
+        images={[
+          '/projects/puzzlesolve/1.png',
+          '/projects/puzzlesolve/2.png',
+          '/projects/puzzlesolve/3.png'
+        ]}
+      />
+
+      <WorkComponent
+        title='Fileshare'
+        type='Personal project'
+        details={`
+          <p>Upload files and receive a unique code to share. </p>
+        `}
+        link='http://fileshare.bryceyoder.com'
+        color='#D9FFF6'
+        button='Open in new tab'
+        images={[
+          '/projects/fileshare/images/1.jpg',
+          '/projects/fileshare/images/2.jpg',
+          '/projects/fileshare/images/3.jpg'
+        ]}
+      />
+
+      <WorkComponent
         title='OpenAI Chat Block'
         type='Moodle development'
         details={`
@@ -146,21 +178,6 @@ export default function Work(props) {
         ]}
       />
 
-      <WorkComponent
-        title='Fileshare'
-        type='Personal project'
-        details={`
-          <p>Upload files and receive a unique code to share. </p>
-        `}
-        link='http://fileshare.bryceyoder.com'
-        color='#D9FFF6'
-        button='Visit the live site!'
-        images={[
-          '/projects/fileshare/images/1.jpg',
-          '/projects/fileshare/images/2.jpg',
-          '/projects/fileshare/images/3.jpg'
-        ]}
-      />
       <WorkComponent
         title='Squirrelly: A GC Odyssey'
         type='College project'

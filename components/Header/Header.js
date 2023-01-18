@@ -88,7 +88,7 @@ function Header() {
                     <nav className={` ${styles.nav} ${styles[mobileState]} `}>
                         <Link rel='canonical' href='/' scroll={false}><a className=''>About</a></Link>
                         <Link rel='canonical' href='/work' scroll={false}><a className=''>Work</a></Link>
-                        <a className='button' href='mailto:me@bryceyoder.com'>Contact</a>
+                        <a className='button' href='mailto:me@bryceyoder.com?subject=Need some web design help'>Contact</a>
                     </nav>
                 </div>
             </motion.header>

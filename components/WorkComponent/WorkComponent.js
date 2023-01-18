@@ -60,7 +60,7 @@ export default function WorkComponent(props) {
                         {props.link ?
                             <a href={props.link} target='_blank' className={`button ${styles.button}`}>{props.button}</a>
                         : ''}
-                        {props.button == 'Visit the live site!' ? 
+                        {props.button == 'Open in new tab' ? 
                         <div className={styles.subButtons}>
                             <button
                                 className={viewState == 'live' ? styles.active : ''}
