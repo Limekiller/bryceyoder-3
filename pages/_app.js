@@ -63,6 +63,17 @@ function MyApp({ Component, pageProps }) {
         <link rel="manifest" href="/site.webmanifest" />
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR06Y707VD"></script>
+      <script dangerouslySetInnerHTML={{__html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-HR06Y707VD');`}}>
+      </script>
+
       </Head>
       <Header />
       <div className='background' />
