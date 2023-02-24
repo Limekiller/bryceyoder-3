@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bryce Yoder | Lancaster, PA-based web design and Moodle development</title>
+        <title>Bryce Yoder | Lancaster, PA-based web development and graphic design</title>
       </Head>
       <div className='pageContainer'>
         <motion.div 
@@ -47,7 +47,7 @@ export default function Home() {
             <div>
               <CursiveHeader title="Who I am" />
               <p>
-                I'm a graphic designer and full-stack web developer living in Lancaster, Pennsylvania, with extensive experience in both tried-and-true technologies like WordPress as well as modern frameworks like <a href='https://nextjs.org/'>Next.js</a> and <a href='https://twill.io/'>Twill</a>. I will work with you to find the very best fit for your website so you can stand out and focus on what you do best.
+                Hi! I'm Bryce, a web developer and graphic designer living in Lancaster, Pennsylvania, with extensive experience in both tried-and-true technologies like <a href='https://wordpress.org/'>WordPress</a> as well as modern frameworks like <a href='https://nextjs.org/'>Next.js</a> and <a href='https://twill.io/'>Twill</a>. I will work with you to find the very best fit for your website so you can stand out and focus on what you do best.
               </p>
             </div>
             <p className='noHeading'>
@@ -91,6 +91,9 @@ export default function Home() {
         }
 
         @media screen and (max-width: 950px) {
+          .gridContainer > div {
+            margin-top: 0;
+          }
           p {
             margin-top: 1rem;
           }
@@ -103,7 +106,7 @@ export default function Home() {
           .languages {
             margin-top: 0;
             grid-column: 1;
-            grid-row: 1;
+            grid-row: 4;
           }
           .gridContainer {
             grid-template-columns: 100%;
