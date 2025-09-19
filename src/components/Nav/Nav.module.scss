@@ -1,0 +1,32 @@
+.nav {
+    .navLinks {
+        display: flex;
+        position: fixed;
+        gap: 2rem;
+        transform: rotate(90deg);
+        transform-origin: top left;
+        width: max-content;
+        height: min-content;
+        margin-left: 1rem;
+        align-items: center;
+
+        a {            
+            &.active {
+                color: rgb(16, 166, 3);
+            }
+
+            img {
+                transform: rotate(-90deg);
+                width: 1.5rem;
+                margin-top: 0.5rem;
+                filter: saturate(0);
+            }
+        }
+    }
+
+    @media screen and (max-width: 675px) {
+        position: fixed;
+        right: 1.25rem;
+        top: 2rem;
+    }
+}

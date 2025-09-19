@@ -1,0 +1,191 @@
+{
+    "ch": {
+        "name": "Chestnut Housing",
+        "type": "Website",
+        "url": "https://chestnuthousing.org",
+        "description": "Chestnut Housing is a non-profit organization that works to provide affordable housing in Lancaster through direct action: purchasing properties, fixing them, and leasing them at low rates to individuals experiencing housing insecurity. The organization had previously worked with a designer to create a robust brand identity, but hadn't had the opportunity to update their website to match. I worked with Chestnut Housing to create a website that looked fresh, professional, and closely followed their brand guidelines.",
+        "images": [
+            {
+                "name": "Homepage",
+                "path": "/ch/homepage.png",
+                "description": "The hero section of the homepage, demonstrating the use of layouts and elements in accordance with the brand guidelines"
+            },
+            {
+                "name": "Content Page",
+                "path": "/ch/page.png",
+                "description": "The generic WordPress \"page\" layout. The pattern element behind the image is randomized, and its color is automatically matched against the chosen page image."
+            },
+            {
+                "name": "News Post",
+                "path": "/ch/post.png",
+                "description": "The generic WordPress \"post\" layout. In this example, no featured post image is set."
+            },
+            {
+                "name": "Mobile",
+                "path": "/ch/mobile.png",
+                "description": "Some examples of mobile layouts on the site"
+            }
+        ],
+        "tech": [
+            "WordPress"
+        ]
+    },
+    "cl": {
+        "name": "CloudLearn AI Plugin",
+        "type": "Moodle plugin",
+        "url": "https://cloudlearn.co.uk",
+        "description": "CloudLearn is a UK company that provides online courses to help students prepare for their standardized GCSE and A-Level tests. The company approached me with a proposal for a Moodle block plugin that would add LLM features to their courses. The block creates lesson summaries and study guides, can simplify content for different age levels, and can generate a test sheet for self-assesment.",
+        "images": [
+            {
+                "name": "Study",
+                "path": "/cl/study.png",
+                "description": "An example of a generated study guide. Generated content is cached in the database to improve performance and reduce cost; admins can choose to clear the cached content in order to force a re-generation."
+            },
+            {
+                "name": "Simplify",
+                "path": "/cl/simplify.png",
+                "description": "The simplify tool rewords lesson content for different age levels. Users can click the \"Copy\" or \"Print\" buttons to export the content from the block."
+            },
+            {
+                "name": "Test",
+                "path": "/cl/test.png",
+                "description": "A generated testing sheet for self-assesment"
+            }
+        ],
+        "tech": [
+            "Moodle", "PHP", "OpenAI"
+        ]
+    },
+    "lmpc": {
+        "name": "Lombard Mennonite<br />Peace Center",
+        "type": "Website",
+        "url": "https://www.lmpeacecenter.org",
+        "description": "Lombard Mennonite Peace Center is an educational organization that provides conflict resolution training and instructional resources on peace and justice. Their previous website was outdated and difficult to read, so I worked with LMPC to create a site that matched their values and identity, while making it easy for visitors to register for seminars.",
+        "images": [
+            {
+                "name": "Homepage",
+                "path": "/lmpc/homepage.png",
+                "description": "The hero section on the site's homepage. While the client did not have extensive brand guidelines, I worked off of the logo to create an image slider that included the same design motifs."
+            },
+            {
+                "name": "Schedule",
+                "path": "/lmpc/schedule.png",
+                "description": "This page lists the upcoming events hosted by the center. It was important that these events be easily updated through the interface in the WordPress backend."
+            },
+            {
+                "name": "Bulletin",
+                "path": "/lmpc/bulletinboard.png",
+                "description": "The site \"bulletin board\" was a specific feature request, allowing the client to update the homepage with news bulletins that were too ephemeral to be actual posts."
+            },
+            {
+                "name": "Mobile",
+                "path": "/lmpc/mobile.png",
+                "description": "Some examples of mobile layouts on the site"
+            }
+        ],
+        "tech": [
+            "WordPress"
+        ]
+    },
+    "chat": {
+        "name": "OpenAI Chat Block",
+        "type": "Moodle plugin",
+        "url": "https://moodle.org/plugins/block_openai_chat",
+        "description": "An LLM-powered chat block plugin for Moodle, built with the OpenAI API. This plugin is installed on thousands of active Moodle sites, has over forty stars on GitHub and dozens of forks.",
+        "images": [
+            {
+                "name": "Block UI",
+                "path": "/chat/chat.png",
+                "description": "The main chat interface. Normally the block sits in the right sidebar, but the pop-out button in the top right moves it to a dedicated window for better readability."
+            },
+            {
+                "name": "Report page",
+                "path": "/chat/report.png",
+                "description": "A screenshot of the block log page. If enabled, all chats are logged, and this report can be filtered by user and date."
+            }
+        ],
+        "tech": ["Moodle", "PHP", "OpenAI"]
+    },
+    "ps": {
+        "name": "Puzzlesolve",
+        "type": "Website",
+        "url": "https://puzzlesolve.net",
+        "description": "A personal project to build automated solvers for New York Times games. As reasonably fun as the games are, I noticed that writing automated solvers for them seemed even more fun and challenging.",
+        "images": [
+            {
+                "name": "Spelling Bee",
+                "path": "/ps/spellingbee.png",
+                "description": "Generate a list of viable words given a set of Spelling Bee letters"
+            },
+            {
+                "name": "Letterboxed",
+                "path": "/ps/letterboxed.png",
+                "description": "Once the Letterboxed board is filled, a user can request that the solver attempt to find a solution that matches a certain number of words"
+            },
+            {
+                "name": "Sudoku",
+                "path": "/ps/sudoku.png",
+                "description": "Your classic Sudoku solver. The lighter-colored numbers are the digits that had been filled in prior to solving."
+            }
+        ],
+        "tech": ["React"]
+    },
+    "bod": {
+        "name": "Beth Oberholtzer Design",
+        "type": "Website",
+        "url": "https://bethoberholtzerdesign.com",
+        "description": "Beth Oberholtzer is an author and designer who needed a website that provided a catalogue of her work and showcased her design portfolio. I worked with her to create a site that matched her style, made it easy to browse and purchase her books, and displayed her portfolio clearly and professionally.",
+        "images": [
+            {
+                "name": "Homepage",
+                "path": "/bod/homepage.png",
+                "description": "The introductory page to the website"
+            },
+            {
+                "name": "Book",
+                "path": "/bod/book.png",
+                "description": "An example of a page showcasing one of the books on sale. The images can be clicked on to show them in a photo gallery for better viewing."
+            },
+            {
+                "name": "Portfolio",
+                "path": "/bod/portfolio.png",
+                "description": "One of the pages from the online portfolio section"
+            },
+            {
+                "name": "Mobile",
+                "path": "/bod/mobile.png",
+                "description": "Some examples of mobile layouts on the site"
+            }
+        ],
+        "tech": ["Nextjs", "Vercel"]
+    },
+    "dyn": {
+        "name": "Dorothy Yoder Nyce",
+        "type": "Website",
+        "url": "https://dorothyyodernyce.com",
+        "description": "Dorothy Yoder Nyce is an author who needed to create a way for her work to be viewed online. I worked with Dorothy to create a bibliographical site that categorized, displayed, and made searchable her work, including displaying footnotes in an intuitive way.",
+        "images": [
+            {
+                "name": "Homepage",
+                "path": "/dyn/homepage.jpg",
+                "description": "The main directory page of the site"
+            },
+            {
+                "name": "Book",
+                "path": "/dyn/menu.jpg",
+                "description": "An illustration of the menu navigation. If desired, the site admin can associate images with each post category, and those images are displayed in the background when said category is selected or hovered."
+            },
+            {
+                "name": "Portfolio",
+                "path": "/dyn/writing.png",
+                "description": "One of the catalogued articles. Footnotes are displayed next to their relevant text; hovering on one of them will hide the others and highlight where in the text it is noted."
+            },
+            {
+                "name": "Mobile",
+                "path": "/dyn/mobile.png",
+                "description": "Some examples of mobile layouts on the site"
+            }
+        ],
+        "tech": ["WordPress"]
+    }
+}
