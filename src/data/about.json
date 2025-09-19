@@ -1,0 +1,23 @@
+{
+    "imgPath": "/profile.png",
+    "content": {
+        "text": "<h2>Hey!</h2><p>I'm Bryce, a designer and full-stack developer living in Lancaster, PA. Currently I'm a lead developer at Moodle, where we build with PHP and Laravel. Previously I was a devops engineer at Moodle, and before that I was lead developer at Bermudan Instacart-clone DropIt. I also do some freelance work on the side. I have a BA in Computer Science from Goshen College, and minored in graphic design there.</p><p>I love the problem-solving that comes with building software, and bringing art, design, and interface to life through code. If you want to work with me—to create a <span style='color: #0ac3ff'>new website</span>, update or finesse the design on an <span style='color: #cc58ba'>existing site</span>, or build a bespoke <span style='color: #f98012'>Moodle plugin</span>—feel free to contact me.</p><i>Some things I've worked with, both personally and professionally:</i>",
+        "techs": [
+            {"name": "PHP", "link": "https://php.net/"},
+            {"name": "JavaScript"},
+            {"name": "Python", "link": "https://python.org/"},
+            {"name": "Moodle", "link": "https://moodle.org/"},
+            {"name": "Laravel", "link": "https://laravel.com/"},
+            {"name": "Inertia.js", "link": "https://inertiajs.com/"},
+            {"name": "Svelte", "link": "https://svelte.dev/"},
+            {"name": "AWS", "link": "https://aws.amazon.com/"},
+            {"name": "Next.js", "link": "https://nextjs.org/"},
+            {"name": "React", "link": "https://react.dev/"},
+            {"name": "WordPress", "link": "https://wordpress.org/"},
+            {"name": "Vue", "link": "https://vuejs.org/"},
+            {"name": "Flask", "link": "https://flask.palletsprojects.com/en/stable/"},
+            {"name": "OpenAI", "link": "https://openai.com/api/"},
+            {"name": "Motion.dev", "link": "https://motion.dev"}
+        ]
+    }
+}

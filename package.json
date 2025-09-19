@@ -1,5 +1,5 @@
 {
-  "name": "bryce-yoder",
+  "name": "bryceyoder",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,14 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "browserslist": "^4.16.6",
-    "caniuse-lite": "^1.0.30001228",
-    "framer-motion": "^2.9.4",
-    "fs": "0.0.1-security",
-    "next": "^11.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-visibility-sensor": "^5.1.1",
-    "sass": "^1.27.0"
+    "motion": "^12.23.13",
+    "next": "15.5.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "sass": "^1.92.1"
   }
 }

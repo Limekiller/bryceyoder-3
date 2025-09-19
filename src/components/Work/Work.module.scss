@@ -1,0 +1,53 @@
+.work {
+    p {
+        margin-top: 1rem;
+        text-align: justify;
+    }
+
+    .url {
+        display: block;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+
+        &::after {
+            content: "";
+            background-image: url("/popout.png");
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-size: contain;
+            top: 0.25rem;
+            position: relative;
+            left: 0.25rem;
+        }
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .type {
+        font-family: 'alkaline', sans-serif;
+        display: block;
+        font-size: 1.25rem;
+    }
+
+    .swipeLabel {
+        font-family: 'alkaline', sans-serif;
+        margin-top: -0.75rem;
+        display: none;
+
+        @media screen and (max-width: 675px) {
+            display: block;
+        }
+    }
+
+    .techs {
+        margin-top: 2rem;
+
+        .tech {
+            margin-top: 1rem;
+            text-transform: capitalize;
+        }
+    }
+}
